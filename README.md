@@ -1279,21 +1279,26 @@ In either case:
     end
     ```
 
-* <a name="access-modifiers"></a>Indent the `public`, `protected`, and
-    `private` methods as much the method definitions they apply to. Leave one
-    blank line above and below them.<sup>[[link](#access-modifiers)]</sup>
+* <a name="access-modifiers"></a>Inline the `public`, `protected`, and
+    `private` modifiers to the methods the apply to.<sup>[[link](#access-modifiers)]</sup>
 
     ```ruby
-    class SomeClass
-      def public_method
-        # ...
-      end
+    # bad
+    class Foo
 
       private
 
-      def private_method
-        # ...
-      end
+      def bar; end
+      def baz; end
+
+    end
+
+    # good
+    class Foo
+
+      private def bar; end
+      private def baz; end
+
     end
     ```
 
